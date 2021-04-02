@@ -15,9 +15,16 @@ node_modules/
 # dotenv environment variables file
 .env
 .env.test
+.env.production*
 
 # misc
 .DS_Store
 
 # production
 **/build
+
+# Workspace Files
+.vscode/
+.prettierignore
+# Local Netlify folder
+.netlify
