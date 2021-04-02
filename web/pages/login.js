@@ -1,9 +1,8 @@
+import Link from 'next/link';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './auth.scss';
 
-export const Login = () => {
-    const address = process.env.SERVER_URL || 'localhost:3000';
+const Login = () => {
+    const address = 'http://localhost:4000';
     const formAction = `${address}/api/auth/login`;
     return (
         <div className="flexbox">
@@ -16,25 +15,30 @@ export const Login = () => {
 
                         <label>Email</label>
                         <input
+                            name="email"
                             type="text"
                             placeholder="email"
                             autoComplete="email"
+                            required
                         />
 
                         <label>Password</label>
                         <input
+                            name="password"
                             type="password"
                             placeholder="password"
                             autoComplete="current-password"
+                            required
                         />
 
                         <input type="submit" value="Sign In" />
                     </form>
-                    <Link to="/register" className="trouble">
-                        Have not registed?
+                    <Link href="/register" className="trouble">
+                        Have not registed? Click Here
                     </Link>
                 </div>
             </div>
         </div>
     );
 };
+export default Login;
